@@ -1,14 +1,35 @@
 # Coding-Test
 please read the explanation of the code below
 
-Explanation:
 
-newspaperData: This is a HashMap that stores the subscription prices for each newspaper. The key is the newspaper name, and the value is an array of subscription prices for each day of the week.
+1. Import Statements: The code starts with importing necessary classes from the `java.util` package, such as `ArrayList`, `HashMap`, `HashSet`, `List`, `Map`, `Scanner`, and `Set`.
 
-main method: The main method is the entry point of the program. It initializes the newspaper subscription data, sets the weekly budget and the number of subscriptions allowed, and then calculates and prints all possible combinations of subscriptions within the budget for two different budgets (40 and 35).
+2. Class Declaration: The class `NewspaperSubscriptionCalculator` is declared, which will contain the main method and other static methods for calculating and displaying newspaper subscription combinations.
 
-getCombination method: This method takes the newspaperData, the number of subscriptions, and the budget as input parameters and calculates all possible combinations of newspaper subscriptions that fit within the given budget. It uses a set to avoid duplicate combinations.
+3. Static Variables: A static variable `newspaperData` of type `Map<String, double[]>` is declared to store the subscription prices for each newspaper. It will use the newspaper names as keys and an array of doubles to store the subscription prices for each day of the week.
 
-calculateTotalExpense method: This method takes the array of subscription prices for a newspaper and the number of subscriptions as input parameters and calculates the total expense for the given number of days. It sums the prices up to the number of subscriptions or the length of the prices array, whichever is smaller.
+4. Main Method: The `main` method is declared as the entry point of the program.
 
-The program uses nested loops to iterate through each pair of newspapers in newspaperData, excluding combinations of the same newspaper. It calculates the total expenses for each pair and adds the combination to the set of combinations
+5. Newspaper Subscription Prices Initialization: In the `main` method, the `newspaperData` map is initialized with the subscription prices for each newspaper for each day of the week.
+
+6. Scanner Object: A new `Scanner` object named `scanner` is created to read user input from the console.
+
+7. User Input: The program prompts the user to enter the weekly budget by displaying the message "Enter the weekly budget: ". The user's input is read using the `scanner.nextDouble()` method and stored in the `budget` variable.
+
+8. Number of Subscriptions: The variable `numSubscriptions` is declared and set to 2, indicating that the program will find combinations of 2 newspaper subscriptions.
+
+9. Combinations Calculation: The `getCombinations` method is called to calculate all possible combinations of 2 newspaper subscriptions within the given budget.
+
+10. Combinations Display: The program then displays the output by iterating through each combination and printing it in the format "{ newspaper1, newspaper2 }, ".
+
+11. Scanner Closure: The `scanner` object is closed using the `scanner.close()` method to release system resources.
+
+12. `getCombinations` Method: The `getCombinations` method takes the `newspaperData` map, `numSubscriptions`, and `budget` as inputs and returns a list of all possible combinations of newspaper subscriptions within the given budget.
+
+13. Combinations Generation: The method uses nested loops to go through each pair of newspapers in `newspaperData` and checks if the combined total subscription price for two newspapers is less than or equal to the given `budget`. If so, it adds the combination to the `combinations` set.
+
+14. Total Expense Calculation: The `calculateTotalExpense` method calculates the total expense of a newspaper subscription for a given number of days, considering the number of days specified in `numSubscriptions`.
+
+15. Return: The method returns the set of combinations as a list.
+
+Overall, the code efficiently finds all possible combinations of 2 newspaper subscriptions within the given budget and prints them out in the specified format. It uses a `Scanner` object to read user input and a combination of loops to calculate and generate the output. The program is modular and easy to understand due to the use of static methods and clear variable names.
